@@ -17,7 +17,7 @@ function App() {
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/tasks');
+      const response = await axios.get('https://task-tracker-app-crkb.onrender.com/api/tasks');
       setTasks(response.data);
       setError('');
     } catch (err) {

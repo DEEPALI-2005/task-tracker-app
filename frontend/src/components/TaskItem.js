@@ -52,7 +52,7 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted }) => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/tasks/${task._id}`);
+        const response = await axios.post('https://task-tracker-app-crkb.onrender.com/api/tasks');
         onTaskDeleted(task._id);
       } catch (err) {
         setError('Error deleting task');
